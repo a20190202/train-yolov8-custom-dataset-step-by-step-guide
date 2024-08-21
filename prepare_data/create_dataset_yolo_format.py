@@ -2,7 +2,9 @@ import os
 import shutil
 
 
-DATA_ALL_DIR = os.path.join('.', 'data_all')
+#DATA_ALL_DIR = os.path.join('.', 'data_all')
+
+
 
 DATA_OUT_DIR = os.path.join('.', 'data')
 
@@ -30,7 +32,8 @@ for j, filename in enumerate([train_bboxes_filename, validation_bboxes_filename,
             id, _, class_name, _, x1, x2, y1, y2, _, _, _, _, _ = line.split(',')[:13]
             if class_name in [alpaca_id]:
                 if not os.path.exists(os.path.join(DATA_OUT_DIR, set_, 'imgs', '{}.jpg'.format(id))):
-                    shutil.copy(os.path.join(DATA_ALL_DIR, '{}.jpg'.format(id)),
+                    #shutil.copy(os.path.join(DATA_ALL_DIR, '{}.jpg'.format(id)),
+                    shutil.copy(os.path.join('DOWNLOAD_FOLDER', '{}.jpg'.format(id)),
                                 os.path.join(DATA_OUT_DIR, set_, 'imgs', '{}.jpg'.format(id)))
                 with open(os.path.join(DATA_OUT_DIR, set_, 'anns', '{}.txt'.format(id)), 'a') as f_ann:
                     # class_id, xc, yx, w, h
