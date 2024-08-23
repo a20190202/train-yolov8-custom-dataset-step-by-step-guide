@@ -2,3 +2,4 @@
 prepare_data/oidv6-train-annotations-bbox.csv
 prepare_data/test-annotations-bbox.csv
 prepare_data/validation-annotations-bbox.csv
+/local_env/myenv
